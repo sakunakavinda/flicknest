@@ -64,6 +64,7 @@
   line-height: 1.1;
   margin-bottom: 1.5rem;
   letter-spacing: -1px;
+  animation: fadeUp 1s ease-out 0.2s both; /* Delay 0.2s */
 }
 
 .hero-highlight {
@@ -80,6 +81,7 @@
   max-width: 600px;
   margin-bottom: 2.5rem;
   line-height: 1.7;
+  animation: fadeUp 1s ease-out 0.4s both; /* Delay 0.4s */
 }
 
 /* --- Book Now Button --- */
@@ -90,15 +92,31 @@
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
   font-weight: 700;
-  color: #0a0a0a;                /* Dark text on bright button */
+  color: #0a0a0a;
   background: linear-gradient(135deg, var(--accent-gold), #f59e0b);
   border: none;
-  border-radius: 50px;          /* Pill shape */
+  border-radius: 50px;
   cursor: pointer;
   transition: var(--transition);
   box-shadow: 0 4px 25px var(--accent-glow);
   letter-spacing: 0.5px;
+  animation: fadeUp 1s ease-out 0.6s both; /* Delay 0.6s */
 }
+
+/* ==============================
+   ANIMATIONS
+   ============================== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .book-now-btn:hover {
   transform: translateY(-3px);   /* Lifts the button up slightly on hover */

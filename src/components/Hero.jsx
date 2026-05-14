@@ -33,7 +33,7 @@ const Hero = () => {
         </h1>
 
         <p className="hero-subtitle">
-          Immerse yourself in luxury. 4K visuals, Dolby Atmos sound, 
+          Immerse yourself in luxury. 4K visuals, HD sound, 
           and total privacy — all reserved exclusively for you.
         </p>
 
