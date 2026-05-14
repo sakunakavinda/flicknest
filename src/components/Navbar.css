@@ -3,17 +3,17 @@
    ============================== */
 
 .navbar {
-  position: fixed;            /* Sticks to the top even when scrolling */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100;               /* Always on top of everything */
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2.5rem;
   background: rgba(10, 10, 10, 0.6);
-  backdrop-filter: blur(12px);  /* Glassmorphism: blurs the content behind */
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
@@ -57,8 +57,21 @@
   transform: translateY(-1px);
 }
 
-/* --- Responsive --- */
-@media (max-width: 600px) {
+/* --- Hamburger Button (hidden on desktop) --- */
+.hamburger-btn {
+  display: none;           /* Hidden on desktop */
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0.25rem;
+  z-index: 101;
+}
+
+/* ==============================
+   RESPONSIVE - MOBILE MENU
+   ============================== */
+@media (max-width: 768px) {
   .navbar {
     padding: 0.75rem 1.25rem;
   }
@@ -67,11 +80,37 @@
     height: 30px;
   }
 
+  /* Show the hamburger button on mobile */
+  .hamburger-btn {
+    display: block;
+  }
+
+  /* 
+    The mobile menu slides in from the right.
+    By default it is off-screen (translateX(100%)).
+  */
   .navbar-links {
-    gap: 1rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100vh;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.5rem;
+    transform: translateX(100%);     /* Off-screen to the right */
+    transition: transform 0.3s ease;
+    border-left: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  /* When the "open" class is added, slide it into view */
+  .navbar-links.open {
+    transform: translateX(0);        /* Slides into the screen */
   }
 
   .navbar-links a {
-    font-size: 0.85rem;
+    font-size: 1.2rem;
   }
 }

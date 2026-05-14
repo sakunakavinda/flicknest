@@ -23,6 +23,10 @@
   --icon-color: #16ff64;
 }
 
+html {
+  scroll-behavior: smooth;   /* Makes anchor link clicks scroll smoothly */
+}
+
 * {
   margin: 0;
   padding: 0;
