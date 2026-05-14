@@ -67,7 +67,7 @@
   height: 64px;
   border-radius: 50%;
   background: rgba(251, 191, 36, 0.1);
-  color: var(--accent-gold);
+  color: var(--icon-color);
   margin-bottom: 1.25rem;
 }
 

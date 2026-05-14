@@ -1,0 +1,77 @@
+/* ==============================
+   NAVBAR
+   ============================== */
+
+.navbar {
+  position: fixed;            /* Sticks to the top even when scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;               /* Always on top of everything */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2.5rem;
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(12px);  /* Glassmorphism: blurs the content behind */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* --- Logo --- */
+.navbar-logo img {
+  height: 40px;
+  width: auto;
+}
+
+/* --- Navigation Links --- */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.navbar-links a:hover {
+  color: var(--text-primary);
+}
+
+/* --- Book Now Button in Navbar --- */
+.nav-book-btn {
+  background: linear-gradient(135deg, var(--accent-gold), #f59e0b);
+  color: #0a0a0a !important;
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+}
+
+.nav-book-btn:hover {
+  box-shadow: 0 4px 20px var(--accent-glow);
+  transform: translateY(-1px);
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0.75rem 1.25rem;
+  }
+
+  .navbar-logo img {
+    height: 30px;
+  }
+
+  .navbar-links {
+    gap: 1rem;
+  }
+
+  .navbar-links a {
+    font-size: 0.85rem;
+  }
+}

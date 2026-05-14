@@ -8,7 +8,7 @@
   --text-secondary: #a1a1aa;
   
   /* Brand Accents */
-  --accent-gold: #fbbf24;
+  --accent-gold: #00ff59;
   --accent-glow: rgba(251, 191, 36, 0.2);
   
   /* Status Colors */
@@ -18,6 +18,9 @@
   /* Spacing & Borders */
   --border-radius: 12px;
   --transition: all 0.3s ease;
+
+  /* icons */
+  --icon-color: #16ff64;
 }
 
 * {
