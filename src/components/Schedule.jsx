@@ -40,13 +40,6 @@ const Schedule = () => {
               <Clock size={16} />
               <span>{booking.startTime} — {booking.endTime}</span>
             </div>
-            <div className="booking-details">
-              <h3 className="booking-movie">{booking.movie}</h3>
-              <div className="booking-customer">
-                <User size={14} />
-                <span>{booking.customerName}</span>
-              </div>
-            </div>
           </div>
         ))}
       </div>
