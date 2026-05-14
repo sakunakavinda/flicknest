@@ -1,18 +1,19 @@
 import React from 'react';
-import Availability from './components/Availability';
+import Hero from './components/Hero';
 
 function App() {
   return (
     <div className="app-container">
-      <h1>Welcome to Flicknest</h1>
-      <p style={{ color: 'var(--text-secondary)' }}>Our premium dark mode theater is coming soon.</p>
-      
-      {/* We are bringing our Availability component onto the screen here! */}
-      <Availability />
-      
+      {/* 
+        Notice: We replaced ALL the raw text with a single <Hero /> tag!
+        The Availability component is now INSIDE Hero.jsx.
+        This is the power of components — clean, organized code.
+      */}
+      <Hero />
     </div>
   )
 }
 
 export default App;
+
 
