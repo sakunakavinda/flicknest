@@ -16,7 +16,7 @@ const Availability = () => {
       {/* We use a ternary operator (condition ? true : false) to show different UI */}
       {isAvailable ? (
         <div className="status-badge available">
-          <CheckCircle2 size={50} />
+          <CheckCircle2 size={20} />
           <span>Available Now</span>
         </div>
       ) : (

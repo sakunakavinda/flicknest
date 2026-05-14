@@ -1,0 +1,98 @@
+/* ==============================
+   SCHEDULE SECTION
+   ============================== */
+
+.schedule-section {
+  padding: 5rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;        /* Centers the section horizontally */
+}
+
+.schedule-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent-gold);
+}
+
+.schedule-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.schedule-subtitle {
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  font-size: 1.05rem;
+}
+
+/* --- The Grid Layout --- */
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);   /* 2 equal columns */
+  gap: 1.25rem;
+}
+
+/* --- Individual Booking Card --- */
+.booking-card {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  transition: var(--transition);
+  cursor: default;
+}
+
+.booking-card:hover {
+  background: var(--bg-card);
+  border-color: rgba(251, 191, 36, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Time Row --- */
+.booking-time {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent-gold);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* --- Details --- */
+.booking-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.booking-movie {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.booking-customer {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* --- Responsive: Stack to 1 column on mobile --- */
+@media (max-width: 768px) {
+  .schedule-grid {
+    grid-template-columns: 1fr;    /* Single column on small screens */
+  }
+
+  .schedule-header h2 {
+    font-size: 1.5rem;
+  }
+}

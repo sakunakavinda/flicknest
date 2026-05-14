@@ -1,5 +1,6 @@
 import React from 'react';
 import Hero from './components/Hero';
+import Schedule from './components/Schedule';
 
 function App() {
   return (
@@ -10,6 +11,9 @@ function App() {
         This is the power of components — clean, organized code.
       */}
       <Hero />
+
+      {/* The booking schedule appears right below the hero */}
+      <Schedule />
     </div>
   )
 }
