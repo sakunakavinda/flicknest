@@ -1,7 +1,7 @@
 import React from 'react';
 import { Play } from 'lucide-react';
 import Availability from './Availability';
-import heroBg from '../assets/hero-bg.png';
+import heroBg from '../assets/hero-bg1.png';
 import './Hero.css';
 
 const Hero = () => {
