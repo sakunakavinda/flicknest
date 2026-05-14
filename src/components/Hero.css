@@ -100,7 +100,12 @@
   transition: var(--transition);
   box-shadow: 0 4px 25px var(--accent-glow);
   letter-spacing: 0.5px;
-  animation: fadeUp 1s ease-out 0.6s both; /* Delay 0.6s */
+  /* 
+    Chain two animations: 
+    1. fadeUp (1s duration, 0.6s delay) 
+    2. breathe (3s duration, infinite loop, starts after fadeUp finishes at 1.6s)
+  */
+  animation: fadeUp 1s ease-out 0.6s both, breathe 3s ease-in-out 1.6s infinite;
 }
 
 /* ==============================
@@ -117,10 +122,25 @@
   }
 }
 
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 25px var(--accent-glow);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 4px 40px var(--accent-gold); /* Brighter glow when expanding */
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 25px var(--accent-glow);
+  }
+}
 
 .book-now-btn:hover {
-  transform: translateY(-3px);   /* Lifts the button up slightly on hover */
-  box-shadow: 0 8px 40px var(--accent-glow);
+  animation-play-state: paused; /* Optional: pause breathing when hovered */
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 30px rgba(0, 255, 89, 0.4);
 }
 
 .book-now-btn:active {

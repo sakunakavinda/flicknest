@@ -10,6 +10,7 @@
   /* Brand Accents */
   --accent-gold: #00ff59;
   --accent-glow: rgba(251, 191, 36, 0.2);
+  --faded-accent: rgb(255, 255, 0);
   
   /* Status Colors */
   --status-available: #22c55e;

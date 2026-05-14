@@ -59,7 +59,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
-  color: var(--accent-gold);
+  color: var(--faded-accent);
   font-weight: 600;
   font-size: 0.85rem;
 }
