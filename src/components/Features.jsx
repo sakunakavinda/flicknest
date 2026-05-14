@@ -33,19 +33,19 @@ const Features = () => {
       icon: <Lock size={32} />,
       title: "Total Privacy",
       description: "A completely private space — just you and your guests."
-    },
-    {
-      id: 5,
-      icon: <Mic2 size={32} />,
-      title: "Karaoke",
-      description: "Enjoy to the fullest with the high quality karaoke system."
-    },
-    {
-      id: 6,
-      icon: <Popcorn size={32} />,
-      title: "Food & Refreshments",
-      description: "Enjoy a variety of snacks and beverages to complement your movie experience."
     }
+    // {
+    //   id: 5,
+    //   icon: <Mic2 size={32} />,
+    //   title: "Karaoke",
+    //   description: "Enjoy to the fullest with the high quality karaoke system."
+    // },
+    // {
+    //   id: 6,
+    //   icon: <Popcorn size={32} />,
+    //   title: "Food & Refreshments",
+    //   description: "Enjoy a variety of snacks and beverages to complement your movie experience."
+    // }
   ];
 
   return (

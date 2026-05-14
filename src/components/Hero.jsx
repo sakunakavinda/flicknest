@@ -37,10 +37,10 @@ const Hero = () => {
           and total privacy — all reserved exclusively for you.
         </p>
 
-        <button className="book-now-btn" id="book-now-btn">
+        <a href="#booking" className="book-now-btn" id="book-now-btn">
           <Play size={18} />
           <span>Book Now</span>
-        </button>
+        </a>
       </div>
     </section>
   );

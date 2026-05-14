@@ -43,7 +43,7 @@ const Navbar = () => {
         <a href="#features" onClick={handleLinkClick}>Features</a>
         <a href="#gallery" onClick={handleLinkClick}>Gallery</a>
         <a href="#schedule" onClick={handleLinkClick}>Schedule</a>
-        <a href="#book-now-btn" className="nav-book-btn" onClick={handleLinkClick}>Book Now</a>
+        
       </div>
     </nav>
   );

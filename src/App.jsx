@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Schedule from './components/Schedule';
 import Features from './components/Features';
 import Gallery from './components/Gallery';
+import BookingForm from './components/BookingForm';
 import Footer from './components/Footer';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Schedule />
       <Features />
       <Gallery />
+      <BookingForm />
       <Footer />
     </div>
   )
