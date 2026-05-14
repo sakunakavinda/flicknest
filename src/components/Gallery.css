@@ -80,8 +80,28 @@
 }
 
 @media (max-width: 600px) {
+  /* 
+    Lesson: CSS Scroll Snapping!
+    Instead of stacking them vertically (1fr), we make them a horizontal scrolling row.
+  */
   .gallery-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;   /* Enables smooth snapping */
+    gap: 1rem;
+    padding-bottom: 1rem;            /* Space for scrollbar */
+    
+    /* Hide scrollbar for cleaner look (optional but recommended for mobile) */
+    scrollbar-width: none;           /* Firefox */
+    -ms-overflow-style: none;        /* IE and Edge */
+  }
+
+  .gallery-grid::-webkit-scrollbar {
+    display: none;                   /* Chrome, Safari and Opera */
+  }
+
+  .gallery-item {
+    flex: 0 0 80%;                   /* Takes up 90% of screen so user sees next photo peeking out */
+    scroll-snap-align: center;       /* Snaps to the center of the screen */
   }
 }
