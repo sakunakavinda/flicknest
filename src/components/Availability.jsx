@@ -17,7 +17,7 @@ const Availability = () => {
       {isAvailable ? (
         <div className="status-badge available">
           <CheckCircle2 size={20} />
-          <span>Available Now</span>
+          <span>Open for Booking</span>
         </div>
       ) : (
         <div className="status-badge busy">
@@ -27,12 +27,12 @@ const Availability = () => {
       )}
 
       {/* A temporary button just so we can test toggling the state! */}
-      <button 
+      {/* <button 
         className="toggle-test-btn" 
         onClick={() => setIsAvailable(!isAvailable)}
       >
         Simulate Booking Change
-      </button>
+      </button> */}
     </div>
   );
 };
