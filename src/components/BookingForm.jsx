@@ -12,7 +12,7 @@ const BookingForm = () => {
     name: '',
     date: '',
     time: '',
-    hours: '2',
+    hours: '3',
     contact: '',
     receiptName: ''
   });
@@ -105,8 +105,11 @@ const BookingForm = () => {
               name="hours" 
               value={formData.hours} 
               onChange={handleChange}
-            >
-              <option value="3">3 Hours</option>
+              >
+              <option value="1.5">1.5 Hours</option>
+                <option value="2">2 Hours</option>
+                <option value="2.5">2.5 Hours</option>
+              <option value="3" >3 Hours</option>
               <option value="4">4 Hours</option>
               <option value="5">5+ Hours</option>
             </select>
