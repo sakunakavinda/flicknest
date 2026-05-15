@@ -45,6 +45,67 @@ const Schedule = () => {
 
   const currentBookings = getBookingsForDate(selectedDate);
 
+  const parseTime = (timeStr) => {
+    const [time, modifier] = timeStr.split(' ');
+    let [hours, minutes] = time.split(':');
+    if (hours === '12') hours = '00';
+    if (modifier === 'PM') hours = parseInt(hours, 10) + 12;
+    return parseInt(hours, 10) * 60 + parseInt(minutes, 10);
+  };
+
+  const formatTime = (minutes) => {
+    const h = Math.floor(minutes / 60);
+    const m = minutes % 60;
+    const ampm = h >= 12 ? 'PM' : 'AM';
+    const displayH = h % 12 || 12;
+    const displayM = m < 10 ? `0${m}` : m;
+    return `${displayH}:${displayM} ${ampm}`;
+  };
+
+  const getFreeSlots = (bookings) => {
+    const openTime = 10 * 60; // 10:00 AM
+    const closeTime = 23 * 60; // 11:00 PM
+    
+    const sortedBookings = [...bookings].sort((a, b) => parseTime(a.startTime) - parseTime(b.startTime));
+    const freeSlots = [];
+    let currentTime = openTime;
+
+    sortedBookings.forEach(booking => {
+      const bookStart = parseTime(booking.startTime);
+      const bookEnd = parseTime(booking.endTime);
+      
+      if (bookStart > currentTime) {
+        freeSlots.push({
+          id: `free-${currentTime}`,
+          startTime: formatTime(currentTime),
+          endTime: formatTime(bookStart),
+          isFree: true
+        });
+      }
+      currentTime = Math.max(currentTime, bookEnd);
+    });
+
+    if (currentTime < closeTime) {
+      freeSlots.push({
+        id: `free-${currentTime}`,
+        startTime: formatTime(currentTime),
+        endTime: formatTime(closeTime),
+        isFree: true
+      });
+    }
+
+    return freeSlots;
+  };
+
+  const freeSlots = getFreeSlots(currentBookings);
+  const allSlots = [...currentBookings.map(b => ({ ...b, isFree: false })), ...freeSlots]
+    .sort((a, b) => parseTime(a.startTime) - parseTime(b.startTime))
+    .map(slot => {
+      const durationHours = (parseTime(slot.endTime) - parseTime(slot.startTime)) / 60;
+      const formattedDuration = Number.isInteger(durationHours) ? durationHours : durationHours.toFixed(1);
+      return { ...slot, durationStr: `${formattedDuration} hr${durationHours !== 1 ? 's' : ''}` };
+    });
+
   return (
     <section className="schedule-section" id="schedule">
       <div className="schedule-top">
@@ -76,18 +137,21 @@ const Schedule = () => {
         to LOOP through the array and generate a card for EACH booking.
       */}
       <div className="schedule-list">
-        {currentBookings.map((booking) => (
-          <div className="booking-card" key={booking.id}>
-            {/* 
-              The "key" prop is required by React when rendering lists.
-              It helps React efficiently track which items changed.
-            */}
+        {allSlots.map((slot) => (
+          <div className={`booking-card ${slot.isFree ? 'free-slot' : ''}`} key={slot.id}>
             <div className="booking-time">
               <Clock size={16} className="booking-icon" />
-              <span>{booking.startTime} — {booking.endTime}</span>
+              <span>
+                {slot.startTime} — {slot.endTime}
+                <span className="duration-text"> ({slot.durationStr})</span>
+              </span>
             </div>
             <div className="booking-status">
-              <span className="status-badge">Booked</span>
+              {slot.isFree ? (
+                <span className="status-badge available">Available</span>
+              ) : (
+                <span className="status-badge booked">Booked</span>
+              )}
             </div>
           </div>
         ))}
