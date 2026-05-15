@@ -7,6 +7,7 @@ import Gallery from './components/Gallery';
 import Pricing from './components/Pricing';
 import BookingForm from './components/BookingForm';
 import Footer from './components/Footer';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Pricing />
       <BookingForm />
       <Footer />
+      <FloatingWhatsApp />
     </div>
   )
 }

@@ -1,0 +1,43 @@
+.floating-whatsapp {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #25D366; /* Official WhatsApp Green */
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: bounceIn 0.6s ease-out;
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* Responsive adjustment for mobile to avoid overlapping with content/footer */
+@media (max-width: 768px) {
+  .floating-whatsapp {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .floating-whatsapp svg {
+    width: 28px !important;
+    height: 28px !important;
+  }
+}
