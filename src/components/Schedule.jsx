@@ -103,8 +103,9 @@ const Schedule = () => {
     .map(slot => {
       const durationHours = (parseTime(slot.endTime) - parseTime(slot.startTime)) / 60;
       const formattedDuration = Number.isInteger(durationHours) ? durationHours : durationHours.toFixed(1);
-      return { ...slot, durationStr: `${formattedDuration} hr${durationHours !== 1 ? 's' : ''}` };
-    });
+      return { ...slot, durationHours, durationStr: `${formattedDuration} hr${durationHours !== 1 ? 's' : ''}` };
+    })
+    .filter(slot => !slot.isFree || slot.durationHours >= 1.5);
 
   return (
     <section className="schedule-section" id="schedule">
@@ -148,7 +149,14 @@ const Schedule = () => {
             </div>
             <div className="booking-status">
               {slot.isFree ? (
-                <span className="status-badge available">Available</span>
+                <>
+                  <span className="status-badge available">Available</span>
+                  {slot.durationHours <= 3 ? (
+                    <span className="status-badge crunch-tag">Bread Crunch</span>
+                  ) : (
+                    <span className="status-badge standard-tag">Standard</span>
+                  )}
+                </>
               ) : (
                 <span className="status-badge booked">Booked</span>
               )}
