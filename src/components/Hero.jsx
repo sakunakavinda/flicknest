@@ -27,14 +27,14 @@ const Hero = () => {
         <Availability />
 
         <h1 className="hero-title">
-          Your Private
-          <span className="hero-highlight"> Cinema </span>
-          Experience
+          Your
+          <span className="hero-highlight"> Fun </span>
+          Nest in Kurunegala
         </h1>
 
         <p className="hero-subtitle">
-          Immerse yourself in luxury. 4K visuals, HD sound, 
-          and total privacy — all reserved exclusively for you.
+          Immerse yourself in luxury. 4K visuals, HD sound, and total privacy —
+          all reserved exclusively for you.
         </p>
 
         <a href="#booking" className="book-now-btn" id="book-now-btn">
