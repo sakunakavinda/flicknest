@@ -1,7 +1,7 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
-import logo from '../assets/logo2.png';
+import logo from '../assets/logo.png';
 import './Footer.css';
 
 const Footer = () => {
