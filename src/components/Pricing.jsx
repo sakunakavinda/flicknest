@@ -42,7 +42,7 @@ const Pricing = () => {
           <div className="card-header">
             <h3>Bread Crunch Hours</h3>
             <p className="crunch-description">
-              If there are free slots between already booked standard slots which are shorter than 3 hours, you can book them for a discounted price.
+              If there are free slots shorter than 3 hours between already booked standard slots, you can book them for a discounted price.
             </p>
             <div className="crunch-guide">
               <Info size={16} />
