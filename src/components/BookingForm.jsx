@@ -10,6 +10,7 @@ const BookingForm = () => {
   */
   const [formData, setFormData] = useState({
     name: '',
+    date: '',
     time: '',
     hours: '2',
     contact: '',
@@ -73,6 +74,18 @@ const BookingForm = () => {
 
           <div className="form-row">
             <div className="form-group">
+              <label htmlFor="date">Date</label>
+              <input 
+                type="date" 
+                id="date" 
+                name="date" 
+                required 
+                value={formData.date}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="form-group">
               <label htmlFor="time">Time</label>
               <input 
                 type="time" 
@@ -83,21 +96,20 @@ const BookingForm = () => {
                 onChange={handleChange}
               />
             </div>
+          </div>
 
-            <div className="form-group">
-              <label htmlFor="hours">Duration (Hours)</label>
-              <select 
-                id="hours" 
-                name="hours" 
-                value={formData.hours} 
-                onChange={handleChange}
-              >
-                
-                <option value="3">3 Hours</option>
-                <option value="4">4 Hours</option>
-                <option value="5">5+ Hours</option>
-              </select>
-            </div>
+          <div className="form-group">
+            <label htmlFor="hours">Duration (Hours)</label>
+            <select 
+              id="hours" 
+              name="hours" 
+              value={formData.hours} 
+              onChange={handleChange}
+            >
+              <option value="3">3 Hours</option>
+              <option value="4">4 Hours</option>
+              <option value="5">5+ Hours</option>
+            </select>
           </div>
 
           <div className="form-group">
