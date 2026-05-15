@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo2.png';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -18,7 +18,11 @@ const Navbar = () => {
 
   return (
     <nav className="navbar" id="navbar">
-      <div className="navbar-logo">
+      <div 
+        className="navbar-logo"
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        style={{ cursor: 'pointer' }}
+      >
         <img src={logo} alt="Flicknest Logo" />
       </div>
 
@@ -40,9 +44,11 @@ const Navbar = () => {
         When isMenuOpen is true, we add the "open" class → CSS makes it visible.
       */}
       <div className={`navbar-links ${isMenuOpen ? 'open' : ''}`}>
+        <a href="#schedule" onClick={handleLinkClick}>Schedule</a>
         <a href="#features" onClick={handleLinkClick}>Features</a>
         <a href="#gallery" onClick={handleLinkClick}>Gallery</a>
-        <a href="#schedule" onClick={handleLinkClick}>Schedule</a>
+        <a href="#booking" onClick={handleLinkClick}>Booking</a>
+        
         
       </div>
     </nav>

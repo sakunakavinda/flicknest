@@ -1,31 +1,44 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Camera, MessageCircle, Clock } from 'lucide-react';
-import logo from '../assets/logo.png';
+import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import logo from '../assets/logo2.png';
 import './Footer.css';
 
 const Footer = () => {
   return (
     <footer className="footer-section" id="footer">
       <div className="footer-content">
-
         {/* Column 1: Brand */}
         <div className="footer-brand">
           <img src={logo} alt="Flicknest Logo" className="footer-logo" />
           <p className="footer-tagline">
-            Your personal cinema experience. Book your private screening today.
+            Your private party and cinema experience. Book your time slot today.
           </p>
           <div className="footer-socials">
-            <a href="#" aria-label="Social Media 1"><Camera size={20} /></a>
-            <a href="#" aria-label="Social Media 2"><MessageCircle size={20} /></a>
+            <a
+              href="https://www.facebook.com/share/1DkjRJhLV2/?mibextid=wwXIfr"
+              aria-label="Facebook"
+            >
+              <FaFacebookF size={20} />
+            </a>
+            <a
+              href="https://www.instagram.com/flicknest_kurunegala?igsh=MWUwenhqMzZuaGU2eg=="
+              aria-label="Instagram"
+            >
+              <FaInstagram size={20} />
+            </a>
+            <a href="https://wa.me/94702197071" aria-label="WhatsApp">
+              <FaWhatsapp size={20} />
+            </a>
           </div>
         </div>
 
         {/* Column 2: Quick Links */}
         <div className="footer-column">
           <h4>Quick Links</h4>
-          <a href="#hero">Home</a>
           <a href="#features">Features</a>
           <a href="#schedule">Schedule</a>
+          <a href="#booking">Booking</a>
         </div>
 
         {/* Column 3: Contact Info */}
@@ -50,10 +63,9 @@ const Footer = () => {
           <h4>Opening Hours</h4>
           <div className="footer-contact-item">
             <Clock size={16} />
-            <span>Mon – Sun: 9 AM – 12 AM</span>
+            <span>Mon – Sun: 10 AM – 11 PM</span>
           </div>
         </div>
-
       </div>
 
       {/* Bottom Bar */}

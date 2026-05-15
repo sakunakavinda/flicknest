@@ -106,7 +106,7 @@ const BookingForm = () => {
               type="tel" 
               id="contact" 
               name="contact" 
-              placeholder="+94 77 123 4567" 
+              placeholder="+94 7X XXX XX XX" 
               required 
               value={formData.contact}
               onChange={handleChange}
