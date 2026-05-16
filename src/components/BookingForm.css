@@ -103,7 +103,7 @@
   width: 100%;
   max-width: 100%;
   padding: 0.75rem;
-  background: rgba(251, 191, 36, 0.1);
+  background: var(--accent-gold-10);
   border: 2px dashed rgba(251, 191, 36, 0.4);
   border-radius: 8px;
   color: var(--accent-gold);

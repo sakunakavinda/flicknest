@@ -50,7 +50,7 @@
 
 .date-picker-container:hover {
   border-color: rgba(251, 191, 36, 0.5);
-  box-shadow: 0 0 10px rgba(251, 191, 36, 0.1);
+  box-shadow: 0 0 10px var(--accent-gold-10);
 }
 
 .date-picker-container input[type="date"] {
@@ -96,7 +96,7 @@
 
 .booking-card:hover {
   background: var(--bg-card);
-  border-color: rgba(251, 191, 36, 0.15);
+  border-color: var(--accent-gold-15);
   border-left: 4px solid #f59e0b;
   transform: translateX(5px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
@@ -151,7 +151,7 @@
 }
 
 .status-badge.crunch-tag {
-  background: rgba(251, 191, 36, 0.1);
+  background: var(--accent-gold-10);
   color: #f59e0b;
   border: 1px solid rgba(251, 191, 36, 0.2);
 }

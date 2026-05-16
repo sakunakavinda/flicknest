@@ -14,7 +14,7 @@
 }
 
 .features-header h2 {
-  font-size: 3  .2rem;
+  font-size: 3.2rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
 }
@@ -53,7 +53,7 @@
 
 .feature-card:hover {
   background: var(--bg-card);
-  border-color: rgba(251, 191, 36, 0.15);
+  border-color: var(--accent-gold-15);
   transform: translateY(-4px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
@@ -66,7 +66,7 @@
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: rgba(251, 191, 36, 0.1);
+  background: var(--accent-gold-10);
   color: var(--icon-color);
   margin-bottom: 1.25rem;
 }

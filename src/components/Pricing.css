@@ -44,7 +44,7 @@
 .pricing-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-  border-color: rgba(251, 191, 36, 0.2);
+  border-color: var(--accent-gold-15);
 }
 
 .card-header {
@@ -122,7 +122,7 @@
 }
 
 .crunch-guide {
-  background: rgba(251, 191, 36, 0.1);
+  background: var(--accent-gold-10);
   border-left: 3px solid var(--accent-gold);
   padding: 1rem;
   border-radius: 4px;

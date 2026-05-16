@@ -58,7 +58,7 @@
 
 .footer-socials a:hover {
   color: var(--accent-gold);
-  background: rgba(251, 191, 36, 0.1);
+  background: var(--accent-gold-10);
   transform: translateY(-2px);
 }
 

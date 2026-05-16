@@ -46,20 +46,20 @@ const Pricing = () => {
             </p>
             <div className="crunch-guide">
               <Info size={16} />
-              <span><strong>Important:</strong> You must always select the <strong>maximum available duration</strong> when booking a Bread Crunch Hour slot.</span>
+              <span><strong>Important:</strong> You must always select the <strong> possible maximum hours package</strong> when booking within a Bread Crunch Hour slot.</span>
             </div>
           </div>
           <div className="crunch-tiers">
             <div className="tier">
-              <span className="tier-duration">2.5 Hours for</span>
+              <span className="tier-duration">2.5 Hours package</span>
               <span className="tier-price">2,000 LKR</span>
             </div>
             <div className="tier">
-              <span className="tier-duration">2.0 Hours for</span>
+              <span className="tier-duration">2.0 Hours package</span>
               <span className="tier-price">1,500 LKR</span>
             </div>
             <div className="tier">
-              <span className="tier-duration">1.5 Hours for</span>
+              <span className="tier-duration">1.5 Hours package</span>
               <span className="tier-price">1,500 LKR</span>
             </div>
           </div>

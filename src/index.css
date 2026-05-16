@@ -9,8 +9,10 @@
   
   /* Brand Accents */
   --accent-gold: #00ff59;
-  --accent-glow: rgba(251, 191, 36, 0.2);
+  --accent-glow: rgba(255, 251, 0, 0.2);
   --faded-accent: rgb(255, 255, 0);
+ 
+
   
   /* Status Colors */
   --status-available: #22c55e;
@@ -22,6 +24,10 @@
 
   /* icons */
   --icon-color: #16ff64;
+
+  /* Brand Accents (Opacities) */
+  --accent-gold-10: rgba(154, 251, 36, 0.1);
+  --accent-gold-15: rgba(222, 159, 0, 0.659);
 }
 
 html {
