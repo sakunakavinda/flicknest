@@ -15,14 +15,14 @@ function App() {
       <Navbar />
       <Hero />
       <Schedule />
+      <Pricing />
       <Features />
       <Gallery />
-      <Pricing />
       <BookingForm />
       <Footer />
       <FloatingWhatsApp />
     </div>
-  )
+  );
 }
 
 export default App;
