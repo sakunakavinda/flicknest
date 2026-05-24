@@ -1,7 +1,8 @@
 import React from 'react';
 import { Play } from 'lucide-react';
 import Availability from './Availability';
-import heroBg from '../assets/hero-bg2.png';
+import heroBg from '../assets/hero-bg1.png';
+import heroBgMobile from '../assets/hero-bg2.png';
 import './Hero.css';
 
 const Hero = () => {
@@ -13,8 +14,10 @@ const Hero = () => {
         so Vite can properly bundle and optimize it.
       */}
       <div className="hero-bg">
-        <img src={heroBg} alt="Flicknest private theater" />
-        {/* This overlay div creates the dark gradient on top of the image */}
+        <picture>
+          <source srcSet={heroBg} media="(max-width: 768px)" />
+          <img src={heroBgMobile} alt="Flicknest private theater" />
+        </picture>
         <div className="hero-overlay"></div>
       </div>
 
