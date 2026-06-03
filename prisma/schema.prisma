@@ -1,0 +1,57 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id            String    @id @default(uuid())
+  fullName      String
+  email         String    @unique
+  contactNumber String?
+  passwordHash  String
+  role          Role      @default(CUSTOMER)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  bookings      Booking[]
+}
+
+enum Role {
+  CUSTOMER
+  ADMIN
+}
+
+model Theater {
+  id        String    @id @default(uuid())
+  name      String
+  capacity  Int
+  isActive  Boolean   @default(true)
+  bookings  Booking[]
+}
+
+model Booking {
+  id            String        @id @default(uuid())
+  userId        String?
+  user          User?         @relation(fields: [userId], references: [id])
+  guestName     String?
+  guestContact  String?
+  theaterId     String
+  theater       Theater       @relation(fields: [theaterId], references: [id])
+  bookingDate   DateTime      @db.Date
+  startTime     String
+  endTime       String
+  durationHours Float
+  movieTitle    String?
+  status        BookingStatus @default(PENDING)
+  receiptUrl    String?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+}
