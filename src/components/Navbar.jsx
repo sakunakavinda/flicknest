@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import logo from '../assets/logo.png';
+import AuthModal from './AuthModal';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -10,9 +11,16 @@ const Navbar = () => {
     it controls whether the mobile menu is open or closed.
   */
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
   // This function closes the menu when a link is clicked
   const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
+
+  const handleLoginClick = (e) => {
+    e.preventDefault();
+    setIsAuthModalOpen(true);
     setIsMenuOpen(false);
   };
 
@@ -49,7 +57,13 @@ const Navbar = () => {
         <a href="#gallery" onClick={handleLinkClick}>Gallery</a>
         <a href="#pricing" onClick={handleLinkClick}>Pricing</a>
         <a href="#booking" onClick={handleLinkClick}>Booking</a>
+        <button className="nav-login-btn" onClick={handleLoginClick}>Login</button>
       </div>
+
+      <AuthModal 
+        isOpen={isAuthModalOpen} 
+        onClose={() => setIsAuthModalOpen(false)} 
+      />
     </nav>
   );
 };
