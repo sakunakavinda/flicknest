@@ -18,14 +18,17 @@ export const getAllBookings = async (req, res) => {
 //create booking
 export const createBooking = async (req, res) => {
     try {
-        const {showId, screenId, userId, seatNumbers, totalAmount} = req.body;
+        const { userId, guestName, guestContact, bookingDate, startTime, endTime, durationHours, receiptUrl } = req.body;
         const booking = await prisma.booking.create({
             data: {
-                showId,
-                screenId,
-                userId,
-                seatNumbers,
-                totalAmount
+                userId, 
+                guestName, 
+                guestContact, 
+                bookingDate, 
+                startTime, 
+                endTime, 
+                durationHours, 
+                receiptUrl 
             }
         });
         return res.status(201).json({booking, messege:"Booking created successfully"});
