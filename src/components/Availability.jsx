@@ -6,7 +6,7 @@ const Availability = () => {
   // Lesson: This is React State! 
   // 'isAvailable' is the variable holding the current status.
   // 'setIsAvailable' is the function we use to change it.
-  const [isAvailable, setIsAvailable] = useState(false);
+  const [isAvailable, setIsAvailable] = useState(true);
   
   // This is a dummy end time. Later we will fetch this from the database.
   const busyEndTime = "10:30 PM";
@@ -22,7 +22,7 @@ const Availability = () => {
       ) : (
         <div className="status-badge busy">
           <Clock size={20} />
-          <span>Theater busy. Place a booking</span>
+          <span>Busy. Place a booking</span>
         </div>
       )}
 
