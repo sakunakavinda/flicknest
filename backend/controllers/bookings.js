@@ -24,7 +24,7 @@ export const createBooking = async (req, res) => {
                 userId, 
                 guestName, 
                 guestContact, 
-                bookingDate, 
+                bookingDate: new Date(bookingDate + "T00:00:00.000Z"), 
                 startTime, 
                 endTime, 
                 durationHours, 
