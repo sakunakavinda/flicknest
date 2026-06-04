@@ -90,3 +90,43 @@ export const createBooking = async (req, res) => {
     return res.status(500).json({ error: "Internal server error" });
   }
 };
+
+
+//get availability
+export const getAvailability = async (req, res) => {
+    try {
+        // Get current date and time
+        const now = new Date();
+        
+        // Create the bookingDate in UTC (date only)
+        const todayStr = now.toISOString().split("T")[0]; // "2026-06-04"
+        const bookingDateObj = new Date(todayStr + "T00:00:00.000Z");
+
+        // Current time as a Date object (using dummy date for Prisma @db.Time)
+        const currentHour = String(now.getHours()).padStart(2, "0");
+        const currentMinute = String(now.getMinutes()).padStart(2, "0");
+        const currentTime = new Date(`1970-01-01T${currentHour}:${currentMinute}:00.000Z`);
+
+        // Find any booking that is currently ongoing
+        const activeBooking = await prisma.booking.findFirst({
+            where: {
+                bookingDate: bookingDateObj,
+                AND: [
+                    { startTime: { lte: currentTime } },  // started at or before now
+                    { endTime: { gte: currentTime } },     // ends at or after now
+                ],
+            },
+            include: { user: true },
+        });
+
+        return res.status(200).json({
+            active: !!activeBooking,      // true if a booking is ongoing
+            booking: activeBooking || null, // the booking details if active
+            
+        });
+
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ error: "Internal server error" });
+    }
+};
