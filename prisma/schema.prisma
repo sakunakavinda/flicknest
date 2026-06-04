@@ -8,9 +8,9 @@ datasource db {
 
 model User {
   id            String    @id @default(uuid())
-  fullName      String
+  name      String
   email         String    @unique
-  contactNumber String?
+  phone String?
   passwordHash  String
   role          Role      @default(CUSTOMER)
   createdAt     DateTime  @default(now())
@@ -29,14 +29,14 @@ model Booking {
   id            String        @id @default(uuid())
   userId        String?
   user          User?         @relation(fields: [userId], references: [id])
-  guestName     String?
-  guestContact  String?
+  name           String
+  contact        String
   bookingDate   DateTime      @db.Date
-  startTime     String
-  endTime       String
+  startTime     DateTime      @db.Time
+  endTime       DateTime      @db.Time
   durationHours Float
   status        BookingStatus @default(PENDING)
-  receiptUrl    String?
+  receiptUrl    String
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
 }
