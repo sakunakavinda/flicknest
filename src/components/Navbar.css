@@ -57,6 +57,26 @@
   transform: translateY(-1px);
 }
 
+/* --- Login Button --- */
+.nav-login-btn {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--accent-gold);
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.nav-login-btn:hover {
+  background: var(--accent-gold-10);
+  color: var(--accent-gold);
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+
 /* --- Hamburger Button (hidden on desktop) --- */
 .hamburger-btn {
   display: none;           /* Hidden on desktop */
